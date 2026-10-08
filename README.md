@@ -6,7 +6,6 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
@@ -52,7 +51,6 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -177,12 +175,7 @@ Contributions are what make the open source community such an amazing place to l
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
-## License
 
-Distributed under the Unlicense License. See `LICENSE` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
@@ -204,8 +197,6 @@ Live Demo: [https://user-match-engine-visualizer.onrender.com/](https://user-mat
 [stars-url]: https://github.com/yoshiko-tsuka/User-Match-Engine-Visualizer/stargazers
 [issues-shield]: https://img.shields.io/github/issues/yoshiko-tsuka/User-Match-Engine-Visualizer.svg?style=for-the-badge
 [issues-url]: https://github.com/yoshiko-tsuka/User-Match-Engine-Visualizer/issues
-[license-shield]: https://img.shields.io/github/license/yoshiko-tsuka/User-Match-Engine-Visualizer.svg?style=for-the-badge
-[license-url]: https://github.com/yoshiko-tsuka/User-Match-Engine-Visualizer/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/yoshikotsuka/
 [Python-shield]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
