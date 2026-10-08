@@ -21,6 +21,7 @@ templates = Jinja2Templates(directory="templates")
 MOCK_GRAPH_DB: dict[str, dict] = {
     "user_001": {
         "id": "user_001",
+        "city": "Sydney",
         "preferences": {"min_age": 25, "max_age": 35, "max_distance_km": 50},
         "attributes": {"age": 28, "latitude": -33.8688, "longitude": 151.2093}, # Sydney
         "channels": {
@@ -30,6 +31,7 @@ MOCK_GRAPH_DB: dict[str, dict] = {
     },
     "user_002": {
         "id": "user_002",
+        "city": "Bondi",
         "preferences": {"min_age": 21, "max_age": 40, "max_distance_km": 100},
         "attributes": {"age": 31, "latitude": -33.8915, "longitude": 151.2767}, # Bondi
         "channels": {
@@ -39,11 +41,42 @@ MOCK_GRAPH_DB: dict[str, dict] = {
     },
     "user_003": {
         "id": "user_003",
+        "city": "Melbourne",
         "preferences": {"min_age": 30, "max_age": 45, "max_distance_km": 10},
         "attributes": {"age": 22, "latitude": -37.8136, "longitude": 144.9631}, # Melbourne
         "channels": {
             "professional": [0.20, 0.90, 0.10, 0.88],
             "interests": ["finance", "cooking"]
+        }
+    },
+    "user_004": {
+        "id": "user_004",
+        "city": "Manly",
+        "preferences": {"min_age": 24, "max_age": 36, "max_distance_km": 40},
+        "attributes": {"age": 29, "latitude": -33.7970, "longitude": 151.2880}, # Manly
+        "channels": {
+            "professional": [0.81, 0.14, 0.68, 0.02],
+            "interests": ["python", "surfing", "hiking", "photography"]
+        }
+    },
+    "user_005": {
+        "id": "user_005",
+        "city": "Surry Hills",
+        "preferences": {"min_age": 24, "max_age": 32, "max_distance_km": 30},
+        "attributes": {"age": 27, "latitude": -33.8830, "longitude": 151.2167}, # Surry Hills
+        "channels": {
+            "professional": [0.88, 0.08, 0.61, 0.04],
+            "interests": ["python", "machine-learning", "coffee", "chess"]
+        }
+    },
+    "user_006": {
+        "id": "user_006",
+        "city": "Perth",
+        "preferences": {"min_age": 20, "max_age": 50, "max_distance_km": 4000},
+        "attributes": {"age": 34, "latitude": -31.9505, "longitude": 115.8605}, # Perth
+        "channels": {
+            "professional": [0.15, 0.88, 0.12, 0.91],
+            "interests": ["finance", "sailing", "wine", "travel"]
         }
     }
 }
@@ -227,6 +260,9 @@ def get_user_matches(
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request):
     return templates.TemplateResponse(
-        request=request, name="index.html"
+        request=request,
+        name="index.html",
+        context={"users": MOCK_GRAPH_DB}
     )
+
 

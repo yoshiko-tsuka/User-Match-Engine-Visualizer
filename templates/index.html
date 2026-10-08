@@ -102,6 +102,15 @@
             border-bottom: 1px solid var(--card-border);
         }
 
+        .avatar-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
         .avatar {
             width: 48px;
             height: 48px;
@@ -337,10 +346,40 @@
         <!-- USER PROFILES DISPLAY -->
         <h2 class="section-title"><i class="fa-solid fa-users"></i> Registered Profiles</h2>
         <div class="user-grid">
-            <!-- User 001 Card -->
+            {% if users %}
+            {% for user_id, user in users.items() %}
             <div class="user-card">
                 <div class="user-card-header">
-                    <div class="avatar">01</div>
+                    <img class="avatar-img" src="https://i.pravatar.cc/150?u={{ user_id }}" alt="{{ user_id }}">
+                    <div class="user-info">
+                        <h3>{{ user_id }}{% if user_id == 'user_001' %} (Source){% endif %}</h3>
+                        <span><i class="fa-solid fa-location-dot"></i> {{ user.city if user.city else 'Location' }} ({{
+                            user.attributes.age }} yo)</span>
+                    </div>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Preferences</strong>
+                        Age: {{ user.preferences.min_age }}-{{ user.preferences.max_age }} | Max {{
+                        user.preferences.max_distance_km }}km
+                    </div>
+                    <div class="detail-item">
+                        <strong>Professional Vector</strong>
+                        [{{ user.channels.professional | join(', ') }}]
+                    </div>
+                </div>
+                <div class="tags">
+                    {% for interest in user.channels.interests %}
+                    <span class="tag">{{ interest }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <!-- Fallback Static User Cards -->
+            <div class="user-card">
+                <div class="user-card-header">
+                    <img class="avatar-img" src="https://i.pravatar.cc/150?u=user_001" alt="user_001">
                     <div class="user-info">
                         <h3>user_001 (Source)</h3>
                         <span><i class="fa-solid fa-location-dot"></i> Sydney (28 yo)</span>
@@ -363,11 +402,9 @@
                     <span class="tag">chess</span>
                 </div>
             </div>
-
-            <!-- User 002 Card -->
             <div class="user-card">
                 <div class="user-card-header">
-                    <div class="avatar">02</div>
+                    <img class="avatar-img" src="https://i.pravatar.cc/150?u=user_002" alt="user_002">
                     <div class="user-info">
                         <h3>user_002</h3>
                         <span><i class="fa-solid fa-location-dot"></i> Bondi (31 yo)</span>
@@ -390,11 +427,9 @@
                     <span class="tag">chess</span>
                 </div>
             </div>
-
-            <!-- User 003 Card -->
             <div class="user-card">
                 <div class="user-card-header">
-                    <div class="avatar">03</div>
+                    <img class="avatar-img" src="https://i.pravatar.cc/150?u=user_003" alt="user_003">
                     <div class="user-info">
                         <h3>user_003</h3>
                         <span><i class="fa-solid fa-location-dot"></i> Melbourne (22 yo)</span>
@@ -415,6 +450,82 @@
                     <span class="tag">cooking</span>
                 </div>
             </div>
+            <div class="user-card">
+                <div class="user-card-header">
+                    <img class="avatar-img" src="https://i.pravatar.cc/150?u=user_004" alt="user_004">
+                    <div class="user-info">
+                        <h3>user_004</h3>
+                        <span><i class="fa-solid fa-location-dot"></i> Manly (29 yo)</span>
+                    </div>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Preferences</strong>
+                        Age: 24-36 | Max 40km
+                    </div>
+                    <div class="detail-item">
+                        <strong>Professional Vector</strong>
+                        [0.81, 0.14, 0.68, 0.02]
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">python</span>
+                    <span class="tag">surfing</span>
+                    <span class="tag">hiking</span>
+                    <span class="tag">photography</span>
+                </div>
+            </div>
+            <div class="user-card">
+                <div class="user-card-header">
+                    <img class="avatar-img" src="https://i.pravatar.cc/150?u=user_005" alt="user_005">
+                    <div class="user-info">
+                        <h3>user_005</h3>
+                        <span><i class="fa-solid fa-location-dot"></i> Surry Hills (27 yo)</span>
+                    </div>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Preferences</strong>
+                        Age: 24-32 | Max 30km
+                    </div>
+                    <div class="detail-item">
+                        <strong>Professional Vector</strong>
+                        [0.88, 0.08, 0.61, 0.04]
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">python</span>
+                    <span class="tag">machine-learning</span>
+                    <span class="tag">coffee</span>
+                    <span class="tag">chess</span>
+                </div>
+            </div>
+            <div class="user-card">
+                <div class="user-card-header">
+                    <img class="avatar-img" src="https://i.pravatar.cc/150?u=user_006" alt="user_006">
+                    <div class="user-info">
+                        <h3>user_006</h3>
+                        <span><i class="fa-solid fa-location-dot"></i> Perth (34 yo)</span>
+                    </div>
+                </div>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>Preferences</strong>
+                        Age: 20-50 | Max 4000km
+                    </div>
+                    <div class="detail-item">
+                        <strong>Professional Vector</strong>
+                        [0.15, 0.88, 0.12, 0.91]
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">finance</span>
+                    <span class="tag">sailing</span>
+                    <span class="tag">wine</span>
+                    <span class="tag">travel</span>
+                </div>
+            </div>
+            {% endif %}
         </div>
 
         <!-- MATCH EXECUTION SECTION -->
@@ -424,8 +535,19 @@
                 <label style="color: var(--text-muted);">Compare user_001 against:</label>
                 <div class="user-select">
                     <select id="userSelectBox">
+                        {% if users %}
+                        {% for user_id, user in users.items() %}
+                        {% if user_id != 'user_001' %}
+                        <option value="{{ user_id }}">{{ user_id }} ({{ user.city }} Target)</option>
+                        {% endif %}
+                        {% endfor %}
+                        {% else %}
                         <option value="user_002">user_002 (Bondi Target)</option>
                         <option value="user_003">user_003 (Melbourne Target)</option>
+                        <option value="user_004">user_004 (Manly Target)</option>
+                        <option value="user_005">user_005 (Surry Hills Target)</option>
+                        <option value="user_006">user_006 (Perth Target)</option>
+                        {% endif %}
                     </select>
                 </div>
                 <button onclick="fetchMatchData()">
