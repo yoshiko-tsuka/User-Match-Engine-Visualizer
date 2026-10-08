@@ -6,16 +6,11 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/yoshiko-tsuka/User-Match-Engine-Visualizer">
-    <img src="https://raw.githubusercontent.com/yoshiko-tsuka/User-Match-Engine-Visualizer/main/images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">User-Match-Engine-Visualizer</h3>
 
   <p align="center">
@@ -50,9 +45,9 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#development--testing">Development & Testing</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -153,6 +148,37 @@ GET /api/v1/match?source_user_id=user_001&target_user_ids=user_002&target_user_i
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- DEVELOPMENT & TESTING -->
+## Development & Testing
+
+### Code Formatting with Black
+
+To verify that all Python files conform to Black formatting guidelines:
+```sh
+black --check .
+```
+
+To automatically format all Python files in the repository:
+```sh
+black .
+```
+
+### Running Tests with Pytest
+
+To run the automated test suite:
+```sh
+pytest -v
+```
+
+#### Running inside Docker Container
+```sh
+docker exec -it fastapi_app black --check .
+docker exec -it fastapi_app pytest
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -177,12 +203,7 @@ Contributions are what make the open source community such an amazing place to l
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
-## License
 
-Distributed under the Unlicense License. See `LICENSE` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
@@ -204,8 +225,6 @@ Live Demo: [https://user-match-engine-visualizer.onrender.com/](https://user-mat
 [stars-url]: https://github.com/yoshiko-tsuka/User-Match-Engine-Visualizer/stargazers
 [issues-shield]: https://img.shields.io/github/issues/yoshiko-tsuka/User-Match-Engine-Visualizer.svg?style=for-the-badge
 [issues-url]: https://github.com/yoshiko-tsuka/User-Match-Engine-Visualizer/issues
-[license-shield]: https://img.shields.io/github/license/yoshiko-tsuka/User-Match-Engine-Visualizer.svg?style=for-the-badge
-[license-url]: https://github.com/yoshiko-tsuka/User-Match-Engine-Visualizer/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/yoshikotsuka/
 [Python-shield]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
