@@ -49,6 +49,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#development--testing">Development & Testing</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -150,6 +151,37 @@ GET /api/v1/match?source_user_id=user_001&target_user_ids=user_002&target_user_i
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- DEVELOPMENT & TESTING -->
+## Development & Testing
+
+### Code Formatting with Black
+
+To verify that all Python files conform to Black formatting guidelines:
+```sh
+black --check .
+```
+
+To automatically format all Python files in the repository:
+```sh
+black .
+```
+
+### Running Tests with Pytest
+
+To run the automated test suite:
+```sh
+pytest -v
+```
+
+#### Running inside Docker Container
+```sh
+docker exec -it fastapi_app black --check .
+docker exec -it fastapi_app pytest
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- ROADMAP -->
 ## Roadmap

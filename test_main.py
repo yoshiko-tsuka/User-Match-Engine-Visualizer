@@ -61,7 +61,9 @@ def test_index_route():
 
 
 def test_match_api_success():
-    response = client.get("/api/v1/match?source_user_id=user_001&target_user_ids=user_002")
+    response = client.get(
+        "/api/v1/match?source_user_id=user_001&target_user_ids=user_002"
+    )
     assert response.status_code == 200
     data = response.json()
     assert data["source_user_id"] == "user_001"
@@ -71,6 +73,8 @@ def test_match_api_success():
 
 
 def test_match_api_user_not_found():
-    response = client.get("/api/v1/match?source_user_id=non_existent_user&target_user_ids=user_002")
+    response = client.get(
+        "/api/v1/match?source_user_id=non_existent_user&target_user_ids=user_002"
+    )
     assert response.status_code == 404
     assert "not found" in response.json()["detail"]
