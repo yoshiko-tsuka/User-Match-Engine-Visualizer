@@ -29,7 +29,7 @@ MOCK_GRAPH_DB: dict[str, dict] = {
             "longitude": 151.2093,
         },  # Sydney
         "channels": {
-            "professional": [0.85, 0.12, 0.64, 0.05],  # Dense vector embedding
+            "professional": [0.90, 0.10, 0.40, 0.05],  # Tech / ML focus
             "interests": ["python", "machine-learning", "hiking", "chess"],
         },
     },
@@ -39,7 +39,7 @@ MOCK_GRAPH_DB: dict[str, dict] = {
         "preferences": {"min_age": 21, "max_age": 40, "max_distance_km": 100},
         "attributes": {"age": 31, "latitude": -33.8915, "longitude": 151.2767},  # Bondi
         "channels": {
-            "professional": [0.79, 0.15, 0.70, 0.01],
+            "professional": [0.60, 0.70, 0.30, 0.10],  # Data / Product blend
             "interests": ["python", "data-science", "surfing", "chess"],
         },
     },
@@ -53,7 +53,7 @@ MOCK_GRAPH_DB: dict[str, dict] = {
             "longitude": 144.9631,
         },  # Melbourne
         "channels": {
-            "professional": [0.20, 0.90, 0.10, 0.88],
+            "professional": [0.10, 0.90, 0.15, 0.85],  # Finance / Admin
             "interests": ["finance", "cooking"],
         },
     },
@@ -63,7 +63,7 @@ MOCK_GRAPH_DB: dict[str, dict] = {
         "preferences": {"min_age": 24, "max_age": 36, "max_distance_km": 40},
         "attributes": {"age": 29, "latitude": -33.7970, "longitude": 151.2880},  # Manly
         "channels": {
-            "professional": [0.81, 0.14, 0.68, 0.02],
+            "professional": [0.40, 0.20, 0.90, 0.10],  # Creative / UI
             "interests": ["python", "surfing", "hiking", "photography"],
         },
     },
@@ -77,7 +77,7 @@ MOCK_GRAPH_DB: dict[str, dict] = {
             "longitude": 151.2167,
         },  # Surry Hills
         "channels": {
-            "professional": [0.88, 0.08, 0.61, 0.04],
+            "professional": [0.85, 0.35, 0.40, 0.05],  # Fullstack AI
             "interests": ["python", "machine-learning", "coffee", "chess"],
         },
     },
@@ -87,7 +87,7 @@ MOCK_GRAPH_DB: dict[str, dict] = {
         "preferences": {"min_age": 20, "max_age": 50, "max_distance_km": 4000},
         "attributes": {"age": 34, "latitude": -31.9505, "longitude": 115.8605},  # Perth
         "channels": {
-            "professional": [0.15, 0.88, 0.12, 0.91],
+            "professional": [0.05, 0.15, 0.20, 0.95],  # Sales / Marketing
             "interests": ["finance", "sailing", "wine", "travel"],
         },
     },

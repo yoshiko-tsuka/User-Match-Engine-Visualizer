@@ -623,8 +623,8 @@
 
                     // Breakdown channel scores
                     if (result.channel_breakdown) {
-                        document.getElementById('ProfScore').innerText = result.channel_breakdown.professional_similarity.toFixed(2);
-                        document.getElementById('InterestsScore').innerText = result.channel_breakdown.interests_overlap.toFixed(2);
+                        document.getElementById('ProfScore').innerText = result.channel_breakdown.professional_similarity.toFixed(4);
+                        document.getElementById('InterestsScore').innerText = result.channel_breakdown.interests_overlap.toFixed(4);
                     }
 
                     // Compatibility badge styling

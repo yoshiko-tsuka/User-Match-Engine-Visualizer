@@ -11,10 +11,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/yoshiko-tsuka/User-Match-Engine-Visualizer">
-    <img src="https://raw.githubusercontent.com/yoshiko-tsuka/User-Match-Engine-Visualizer/main/images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">User-Match-Engine-Visualizer</h3>
 
   <p align="center">
