@@ -168,6 +168,8 @@ class MultiChannelRankingLayer:
 RANKING_ENGINE = MultiChannelRankingLayer(weights={"professional": 0.60, "interests": 0.40})
 
 @app.get("/api/v1/match", response_model=MatchResponse)
+# TODO: Real database query(I/O). Make it Async
+# async def get_user_profile(self, user_id: str):
 def get_user_matches(
     source_user_id: str = Query(..., description="The ID of the user requesting matching feeds"),
     target_user_ids: list[str] = Query(..., description="List of target user IDs to screen and rank")
@@ -181,6 +183,11 @@ def get_user_matches(
 
     for target_id in target_user_ids:
         target_profile = ExternalGraphClient.get_user_profile(target_id)
+        # TODO: Real database query(I/O). Use Await and Async
+        # TODO: Pass id array to avoid N+1 query problem
+        # target_profiles = await ExternalGraphClient.get_user_profiles(
+        #     target_user_ids
+        # )
         if not target_profile:
             continue
 
