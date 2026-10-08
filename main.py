@@ -14,6 +14,8 @@ app = FastAPI(
 )
 
 templates = Jinja2Templates(directory="templates")
+if os.path.exists("images"):
+    app.mount("/images", StaticFiles(directory="images"), name="images")
 
 # ==========================================
 # 1. DATABASE & GRAPH SIMULATION (Mock Read-Only Data)
